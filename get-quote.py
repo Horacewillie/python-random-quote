@@ -1,3 +1,4 @@
+import re
 import random
 def primary():
   #print("Keep it logically awesome.")
@@ -6,9 +7,14 @@ def primary():
   quotes = f.readlines()
   f.close()
   last = 13
-  rnd = random.randint(0,last)
+  rnd = random.choices(quotes, k = 5)
+  new_list= []
+  for quote in rnd:
+    new_list.append(quote.strip("\n"))
 
-  print(quotes[rnd])
+  print(new_list)
+
+  
 
 if __name__== "__main__":
   primary()
